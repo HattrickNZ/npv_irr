@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Grid Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS --ks-- creates the grid and some formatting  -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --ks-- creates some color in the text  -->
+    <link href="dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template --ks-- more color and structure-->
+    <link href="dist/css/grid.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.4.1/moment-timezone-with-data.js" type="text/javascript"></script>
+	 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.4.1/moment-timezone-utils.min.js" type="text/javascript"></script> --> 
+	 <script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+	 
+	 <!--
+	 <link rel="stylesheet" href="///172.21.200.53/wi/src/DataTables-1.10.7/media/css/jquery.dataTables.min.css" TYPE="text/css" MEDIA="screen">
+	 <script src="///172.21.200.53/wi/src/DataTables-1.10.7/media/js/jquery.dataTables.min.js"></script>
+	 <script src="///172.21.200.53/wi/src/d3_v355.min.js" charset="utf-8"></script>
+	 -->
+	 
+	 <!-- removing PLs above and using the below links-->
+	 <link rel="stylesheet" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" TYPE="text/css" MEDIA="screen">
+	 <script src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.12/d3.min.js" charset="utf-8"></script>
+	 
+	 
+	 <!-- <script src="dist/js/moment-timezone-with-data.js" type="text/javascript"></script> --> 
+	 
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
+	 
+	 
+ 
+	 
+	 
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Bootstrap grid examples</h1>
+        <p class="lead">Basic grid layouts to get you familiar with building within the Bootstrap grid system.</p>
+      </div>
+
+	  <div class="row">
+        <div class="col-md-4">Auckland Time</div>
+        <div class="col-md-4">Dublin Time</div>
+        <div class="col-md-4">Sydney Time</div>
+      </div>
+	  	  <div class="row">
+        <div class="col-md-4" id="aucklandTime" >Auckland Time</div>
+        <div class="col-md-4" id="dublinTime">Dublin Time</div>
+        <div class="col-md-4"id="sydneyTime">Sydney Time</div>
+      </div>
+	 
+<!--	 
+	<div class="input-group">
+		<span class="input-group-addon">$</span>
+			<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="initial investment?(minus value)">
+		<span class="input-group-addon">.00</span>
+	</div>
+	
+	<div class="input-group">
+		<span class="input-group-addon">$</span>
+			<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="potential return? year1">
+		<span class="input-group-addon">.00</span>
+	</div>
+	
+	<br>
+	<hr>
+	
+	<form action="action_page.php">
+		First name:<br>
+		<input type="text" name="firstname" value="Mickey">
+		<br>
+		Last name:<br>
+		<input type="text" name="lastname" value="Mouse">
+		<br><br>
+		<input type="submit" value="Submit">
+	</form> 
+	
+	<br>
+	<hr>
+		
+	<form id="frm1" action="form_action.asp">
+	  First name: <input type="text" name="fname" value="Donald"><br>
+	  Last name: <input type="text" name="lname" value="Duck"><br><br>
+	  <input type="submit" value="Submit">
+	</form> 
+
+	
+	<p>Click "Try it" to display the value of each element in the form.</p>
+
+	<button onclick="myFunction()">Try it</button>
+
+	<p id="demo"></p>
+
+	<script>
+	function myFunction() {
+		var x = document.getElementById("frm1");
+		var text = "";
+		var i;
+		for (i = 0; i < x.length ;i++) {
+			text += x.elements[i].value + "<br>";
+		}
+		document.getElementById("demo").innerHTML = text;
+	}
+	</script>
+	
+	-->
+	
+	<br>
+	<hr>
+	
+	<form id="frm1" action="form_action.asp">
+	  initial amount: <input type="text" name="fname" placeholder="amount(minus value)" value="-100" ><br>
+	  yearly return: <input type="text" name="lname" placeholder="year1" value="100"><br>
+	  number of years: <input type="text" name="lname" placeholder="10" value="10"><br><br>
+	  <!-- <input type="submit" value="Submit"> --> 
+	</form> 
+	
+	<br>
+	<p>Click "build table" to build my table below</p>
+	
+	<button onclick="buildTable()">build table</button>
+	
+	
+	<p id="demo"> test1 - this is where the init invest and year1 return will appear</p>
+	
+	<br>
+	
+	<div id=test> this is where I will build a table </div>
+	
+	
+		<script>
+		
+		console.log("START ---------\> ")
+		
+		function isInArray(value, array) {
+			return array.indexOf(value) > -1;
+		}
+		
+		console.log(isInArray(1, [1,2,3]))
+		
+		console.log("END ---------\> ")
+		
+		var rowformatfunctions = {
+			rnc_liecences_perc_last30days:function (row, data, index) {
+
+				ii=0 
+				for (var key in data) {
+					if (ii==0) { //do nothing to the first column values
+					} else {
+						if ( parseInt(data[key].substring(0,3),10) >= 80 ){
+							//console.log(key + " -> " + data[key]);
+							$('td', row).eq(ii).css("color","red");
+						} else { 
+							$('td', row).eq(ii).css("color","green");
+						}
+					}
+				ii++
+				} 
+
+			},
+			usn_licences_gb_iu_s1_pdp_att:function (row, data, index) {
+
+				ii=0 
+				for (var key in data) {
+					if (ii==0) { //do nothing to the first column values
+					} else if (ii==3 || ii==6){
+						if ( parseInt(data[key].substring(0,2),10) >= 80 ){
+							//console.log(key + " -> " + data[key]);
+							$('td', row).eq(ii).css("color","red");
+						} else { 
+							$('td', row).eq(ii).css("color","green");
+						}
+					}
+				ii++
+				} 
+
+			},
+			format1:function (row, data, index) {
+				colsToFormat=[2,3,5,6,8,9,11,12,14,15,17,18,20,21,23,24]
+				//console.log("row",row)
+				//console.log("data",data)
+				//console.log("index",index)
+				var ii=0 
+				for (var key in data) {
+					//console.log("key",key)
+					if (ii==0) { //do nothing to the first column values
+					//} else if ((ii==2 || ii==3 || ii==5 || ii==6)){
+					} else if (isInArray(ii, colsToFormat)){
+					
+						//console.log("data[key]",data[key])
+						if ( data[key]<=15 ){
+							//console.log(key + " -> " + data[key]);
+							$('td', row).eq(ii).css("color","red");
+						} else { 
+							$('td', row).eq(ii).css("color","blue");
+						}
+					}
+				ii++
+				} 
+
+			}
+			
+		}
+
+/*		
+		ch2=['year','5%','N','I','6%','N','I','7%','N','I','8%','N','I','9%','N','I','10%','N','I','11%','N','I','12%','N','I']
+		//ch2.shift() // remove the 1st element('year')
+		qq=[]
+		for(k=1;k<ch2.length;k+=3){
+			console.log("k",k)
+			qq.push(ch2[k])
+			console.log("ch2[k]",ch2[k])
+			console.log("qq",qq)
+			console.log("ch.length",ch2.length)
+		}
+		//console.log("qq",qq)
+*/		
+	function buildTable() {
+	//console.log( "buildTable is called" );
+		var x = document.getElementById("frm1");
+		var values = [];
+		var i;
+		for (i = 0; i < x.length ;i++) {
+			console.log( "x", x.elements[i].value );
+			values.push(x.elements[i].value);
+		}
+		
+		//console.log( "values",values.length );
+		//console.log( "values",values[0] );
+		//console.log( "values",values[1] );
+		console.log( "values",values[2] );
+		
+		document.getElementById("demo").innerHTML = values;
+		
+		ch2=['year','5%','N','I','6%','N','I','7%','8%','9%','10%','11%','12%']
+		ch=['year','5%','N5','I5','6%','N6','I6','7%','N7','I7','8%','N8','I8','9%','N9','I9','10%','N10','I10','11%','N11','I11','12%','N12','I12']
+		
+		//clear the div before drawing any table
+		$('#test').empty()
+		
+		//options here is if I wanna do some formatting on the datatables
+		//var options = rowformatfunctions[formatFunc] ? {'createRow':rowformatfunctions[formatFunc]} : {}
+		var options = rowformatfunctions["format1"] ? {'createRow':rowformatfunctions["format1"]} : {}
+		//var options = {}
+		
+		t1=dTableControl.init($('#test'), options); 
+		//t1=dTableControl.init($('#test')); 
+		//t.addHeaders(['Function Subset ID','Function Subset Name','Counter ID','Counter Name','Unit','Time Sum','Object Sum','Description']); 
+
+		//add my headers 
+		//t1.addHeaders(["test1","test12","test1","test12","test1","test12","test1","test12","test1","test12","test1","test12","test1","test12","test1","test12","test1","test12","test1","test12","test1","test12","test1","test12"])
+		t1.addHeaders(ch)
+		
+		t1.create();
+		
+		//this is the data format that I want
+		file=[{"5%":-1000,"N":"func","I":"func","6%":-1000,"7%":-1000,"8%":-1000,"9%":-1000,"10%":-1000,"11%":-1000,"12%":-1000},
+		{"5%":-2000,"N":"func","I":"func","6%":-2000,"7%":-2000,"8%":-2000,"9%":-2000,"10%":-2000,"11%":-2000,"12%":-2000},
+		{"5%":-3000,"N":"func","I":"func","6%":-3000,"7%":-3000,"8%":-3000,"9%":-3000,"10%":-3000,"11%":-3000,"12%":-3000}
+		];
+		
+		//this give an array with multiple objects
+		/*newdd1 = function toObject(arr) {
+			var a =[];
+				for (var i = 0; i < arr.length; ++i) {
+					var rv = {};
+					rv[arr[i]] = "test";
+					a.push(rv);
+				}
+			return a;
+		}*/
+				
+		numOfRows=values[2]
+		var a=[];
+		cashflow=[values[0]]
+		for(i=0;i<numOfRows;i++){cashflow.push(values[1])}
+		console.log("c",cashflow)
+		console.log("c",cashflow.length)
+		npvArr=[];
+		irrArr=[];
+		
+		
+
+		
+		//I want an array with 1 object to start with 
+		newdd = function toObject(arr) {
+		
+			/*
+			console.log("arr",arr);
+			qq=[]
+			for(k=1;k<arr.length;k+=3){
+			console.log("k",k)
+			qq.push(arr[k])
+			console.log("arr[k]",arr[k])
+			console.log("qq",qq)
+			console.log("arr.length",arr.length)
+			}
+			
+			for (var j = 0; j < 1; j++) { 
+				console.log("j",j)
+				for (var i = 0; i < arr.length; ++i) {
+					console.log("i",i)
+					var o={};
+					o[arr[i]] = j;
+					console.log("o",o)
+				}
+				a.push(o) 
+				console.log("a",a)
+			}
+			
+			//console.log("a",a)
+			*/
+			
+			for (var j = 0; j < numOfRows; ++j) {  // j is the rows 
+
+				if(j===0){
+					//console.log("j",j);
+					var o={};
+					for (var i = 0; i < arr.length; ++i) {
+						if(arr[i]==="N5"){
+							//o[arr[i]] = parseFloat(arr[i-1])/100//arr[i-1]//"Nfunc";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I5"){
+							//o[arr[i]] = arr[i-2] //"Ifunc";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"Ifunc";
+						}
+						else if(arr[i]==="N6"){
+							//o[arr[i]] = arr[i-1] //"Nfunc6";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I6"){
+							//o[arr[i]] = arr[i-2] //"Ifunc6";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"Ifunc";
+						}
+						else if(arr[i]==="N7"){
+							//o[arr[i]] = arr[i-1] //"Nfunc6";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I7"){
+							//o[arr[i]] = arr[i-2] //"Ifunc6";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"Ifunc";
+						}
+						else if(arr[i]==="N8"){
+							//o[arr[i]] = arr[i-1] //"Nfunc6";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I8"){
+							//o[arr[i]] = arr[i-2] //"Ifunc6";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"Ifunc";
+						}
+						else if(arr[i]==="N9"){
+							//o[arr[i]] = arr[i-1] //"Nfunc6";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I9"){
+							//o[arr[i]] = arr[i-2] //"Ifunc6";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"Ifunc";
+						}
+						else if(arr[i]==="N10"){
+							//o[arr[i]] = arr[i-1] //"Nfunc6";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I10"){
+							//o[arr[i]] = arr[i-2] //"Ifunc6";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"Ifunc";
+						}
+						else if(arr[i]==="N11"){
+							//o[arr[i]] = arr[i-1] //"Nfunc6";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I11"){
+							//o[arr[i]] = arr[i-2] //"Ifunc6";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"Ifunc";
+						}
+						else if(arr[i]==="N12"){
+							//o[arr[i]] = arr[i-1] //"Nfunc6";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I12"){
+							//o[arr[i]] = arr[i-2] //"Ifunc6";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"Ifunc";
+						}
+						else if(arr[i]==="year"){
+							o[arr[i]] = 0;
+						}
+						else {
+							o[arr[i]] = values[0];
+						}
+						
+					}
+					console.log("a",a)	
+					a.push(o)
+				}else if(j>=1){
+					console.log("j",j);
+					//console.log("arr",arr);
+					var o={};
+					for (var i = 0; i < arr.length; ++i) {
+						if(arr[i]==="N5"){
+							//o[arr[i]] = parseFloat(arr[i-1])/100//arr[i-1]//"2Nfunc";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//npvArr.push(parseFloat(Fin.npv(0.05,cashflow.slice(0,i))).toFixed(2))
+						}
+						else if(arr[i]==="I5"){
+							//o[arr[i]] = arr[i-2]// "2Ifunc";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"2Ifunc";
+						}
+						else if(arr[i]==="N6"){
+							//o[arr[i]] = arr[i-1]//"2Nfunc";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I6"){
+							//o[arr[i]] = arr[i-2]// "2Ifunc";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"2Ifunc";
+						}
+						else if(arr[i]==="N7"){
+							//o[arr[i]] = arr[i-1]//"2Nfunc";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I7"){
+							//o[arr[i]] = arr[i-2]// "2Ifunc";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"2Ifunc";
+						}
+						else if(arr[i]==="N8"){
+							//o[arr[i]] = arr[i-1]//"2Nfunc";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I8"){
+							//o[arr[i]] = arr[i-2]// "2Ifunc";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"2Ifunc";
+						}
+						else if(arr[i]==="N9"){
+							//o[arr[i]] = arr[i-1]//"2Nfunc";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I9"){
+							//o[arr[i]] = arr[i-2]// "2Ifunc";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"2Ifunc";
+						}
+						else if(arr[i]==="N10"){
+							//o[arr[i]] = arr[i-1]//"2Nfunc";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I10"){
+							//o[arr[i]] = arr[i-2]// "2Ifunc";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"2Ifunc";
+						}
+						else if(arr[i]==="N11"){
+							//o[arr[i]] = arr[i-1]//"2Nfunc";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I11"){
+							//o[arr[i]] = arr[i-2]// "2Ifunc";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"2Ifunc";
+						}
+						else if(arr[i]==="N12"){
+							//o[arr[i]] = arr[i-1]//"2Nfunc";
+							o[arr[i]] = parseFloat(Fin.npv(parseFloat(arr[i-1])/100,cashflow.slice(0,j+1))).toFixed(2)//"Nfunc";
+						}
+						else if(arr[i]==="I12"){
+							//o[arr[i]] = arr[i-2]// "2Ifunc";
+							o[arr[i]] = IRRCalc(cashflow.slice(0,j+1))//"2Ifunc";
+						}
+						else if(arr[i]==="year"){
+							o[arr[i]] = j;
+						}
+						else {
+							o[arr[i]] = values[1];
+						}
+					}
+					//console.log("a",a)	
+					a.push(o) 
+				}
+				
+				
+			} 
+		return a;
+	 }
+		
+		file=newdd(ch)
+		console.log(file)		
+		
+		//draw my rows 
+		_.each(file, function(row) {
+		//console.log("r",row)
+		//oTable.row.add(row);
+		//t1.addRows({test1:2222,test12:5555})
+		t1.addRows(row)
+		//console.log("row");	console.log(row);
+		});
+		
+		//oTable.draw();
+		t1.draw();
+		
+		
+		// getting the values I want to use to get the npv
+		var arr = []
+		$('#DataTables_Table_0 tbody tr').each(function() {
+			var colValues = $(this).find("td").eq(1).html();    
+			arr.push(colValues)
+			//console.log("a",arr)
+		});
+		
+		//getting the npv array and the IRR array
+		/*npvArr=[];
+		irrArr=[];
+		for(var i=1;i<=arr.length;i++){
+			//console.log(Fin.npv(0.05,arr.slice(0,i)));
+			//npvArr.push(Fin.npv(0.05,arr.slice(0,i)))
+			npvArr.push(parseFloat(Fin.npv(0.05,arr.slice(0,i))).toFixed(2))
+			irrArr.push(IRRCalc(arr.slice(0,i)))
+		}
+		
+		/*
+		function calc_npv_irr(arr){
+			for(var i=1;i<=arr.length;i++){
+				//console.log(Fin.npv(0.05,arr.slice(0,i)));
+				//npvArr.push(Fin.npv(0.05,arr.slice(0,i)))
+				npvArr.push(parseFloat(Fin.npv(0.05,arr.slice(0,i))).toFixed(2))
+				irrArr.push(IRRCalc(arr.slice(0,i)))
+			}
+			return npvArr irrArr;
+		}*/
+		
+		/*
+		for(var i=1;i<=arr.length;i++){
+			//console.log(Fin.npv(0.05,arr.slice(0,i)));
+			irrArr.push(IRRCalc(arr.slice(0,i)))
+		}*/
+		
+		//assigning the npv in the table
+		/*$('#DataTables_Table_0 tbody tr').each(function(index) {
+			$(this).find("td").eq(2).html(npvArr[index]);
+			$(this).find("td").eq(3).html(irrArr[index]);
+		});*/
+		
+		
+	}
+	</script>
+	
+	  
+	  <br>
+	  <hr>
+	  
+	  
+	  <br>
+	  <hr>
+	  <br>
+	  <hr>
+	  <br>
+	  <hr>
+	  
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p></p>
+	  <p>MORE STUFF BELOW -------------------------------------------------------------------------------</p>
+	  <p>MORE STUFF BELOW -------------------------------------------------------------------------------</p>
+	  <p>MORE STUFF BELOW -------------------------------------------------------------------------------</p>
+	  <p>MORE STUFF BELOW -------------------------------------------------------------------------------</p>
+	  <p>MORE STUFF BELOW -------------------------------------------------------------------------------</p>
+	  <p>MORE STUFF BELOW -------------------------------------------------------------------------------</p>
+	  <p>Get three equal-width columns <strong>starting at desktops and scaling to large desktops</strong>. On mobile devices, tablets and below, the columns will automatically stack.</p>
+
+	  
+	  
+      <h3>Three equal columns</h3>
+      <p>Get three equal-width columns <strong>starting at desktops and scaling to large desktops</strong>. On mobile devices, tablets and below, the columns will automatically stack.</p>
+      <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+      </div>
+
+      <h3>Three unequal columns</h3>
+      <p>Get three columns <strong>starting at desktops and scaling to large desktops</strong> of various widths. Remember, grid columns should add up to twelve for a single horizontal block. More than that, and columns start stacking no matter the viewport.</p>
+      <div class="row">
+        <div class="col-md-3">.col-md-3</div>
+        <div class="col-md-6">.col-md-6</div>
+        <div class="col-md-3">.col-md-3</div>
+      </div>
+
+      <h3>Two columns</h3>
+      <p>Get two columns <strong>starting at desktops and scaling to large desktops</strong>.</p>
+      <div class="row">
+        <div class="col-md-8">.col-md-8</div>
+        <div class="col-md-4">.col-md-4</div>
+      </div>
+
+      <h3>Full width, single column</h3>
+      <p class="text-warning">No grid classes are necessary for full-width elements.</p>
+
+      <hr>
+
+      <h3>Two columns with two nested columns</h3>
+      <p>Per the documentation, nesting is easy—just put a row of columns within an existing column. This gives you two columns <strong>starting at desktops and scaling to large desktops</strong>, with another two (equal widths) within the larger column.</p>
+      <p>At mobile device sizes, tablets and down, these columns and their nested columns will stack.</p>
+      <div class="row">
+        <div class="col-md-8">
+          .col-md-8
+          <div class="row">
+            <div class="col-md-6">.col-md-6</div>
+            <div class="col-md-6">.col-md-6</div>
+          </div>
+        </div>
+        <div class="col-md-4">.col-md-4</div>
+      </div>
+
+      <hr>
+
+      <h3>Mixed: mobile and desktop</h3>
+      <p>The Bootstrap 3 grid system has four tiers of classes: xs (phones), sm (tablets), md (desktops), and lg (larger desktops). You can use nearly any combination of these classes to create more dynamic and flexible layouts.</p>
+      <p>Each tier of classes scales up, meaning if you plan on setting the same widths for xs and sm, you only need to specify xs.</p>
+      <div class="row">
+        <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">.col-xs-6</div>
+      </div>
+
+      <hr>
+
+      <h3>Mixed: mobile, tablet, and desktop</h3>
+      <p></p>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-lg-8">.col-xs-12 .col-sm-6 .col-lg-8</div>
+        <div class="col-xs-6 col-lg-4">.col-xs-6 .col-lg-4</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+      </div>
+
+      <hr>
+
+      <h3>Column clearing</h3>
+      <p><a href="http://getbootstrap.com/css/#grid-responsive-resets">Clear floats</a> at specific breakpoints to prevent awkward wrapping with uneven content.</p>
+      <div class="row">
+        <div class="col-xs-6 col-sm-3">
+          .col-xs-6 .col-sm-3
+          <br>
+          Resize your viewport or check it out on your phone for an example.
+        </div>
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+
+        <!-- Add the extra clearfix for only the required viewport -->
+        <div class="clearfix visible-xs"></div>
+
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+      </div>
+
+      <hr>
+
+      <h3>Offset, push, and pull resets</h3>
+      <p>Reset offsets, pushes, and pulls at specific breakpoints.</p>
+      <div class="row">
+        <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
+        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+        <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0">.col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0</div>
+      </div>
+
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="dist/js/ie10-viewport-bug-workaround.js"></script>
+	
+	<script>
+	  
+	  /*
+	  var i =1;
+	  update()
+	  timer = setInterval(function() { update() }, 5000)
+  
+	  function update() {
+		//alert(i++)
+		NowMoment = moment().format("YYYY-M-D HH:mm:ss");
+		//console.log(i++);
+		// display value of moment object in #displayMoment div
+		eDisplayMoment = document.getElementById('displayMoment');
+		//console.log(NowMoment);
+		eDisplayMoment.innerHTML = NowMoment;
+		
+		
+		//dub time 
+		s = moment().tz("America/Los_Angeles").format('hh:mm:ss a'); 
+		//console.log('s',s);
+		//newYork.tz.add('America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0').format("h:mm a");
+		
+	  } */
+	  
+		function showTheTime() {
+			var aucklandTime = moment().tz("Pacific/Auckland").format('hh:mm:ss a');    
+			document.getElementById("aucklandTime").innerHTML = aucklandTime;
+			
+			var dublinTime = moment().tz("Europe/Dublin").format('hh:mm:ss a');    
+			document.getElementById("dublinTime").innerHTML = dublinTime;
+			
+			var sydneyTime = moment().tz("Australia/Sydney").format('hh:mm:ss a');    
+			document.getElementById("sydneyTime").innerHTML = sydneyTime;
+			
+		}
+
+		showTheTime(); // for the first load
+		setInterval(showTheTime, 250); // update it periodically
+		
+		
+		
+		
+		//////// BUID THE TABLE PART ////////////////////
+		
+			//new 1 
+	var dTableControl = {
+	  init: function(div, options) {
+		var _options = options || {};
+		//if (typeof options === 'not defined') { options = 'default'; }
+		var tableControl = Object.create(dTableControl.prototype);
+		var _div = div;
+		var headers = [];
+		var domTable = div.append('<table class="display">').find('table');
+		var domHeader = domTable.append('<thead>').find('thead');
+		var postCreatedRow = _options.createRow || function() {return;};
+		tableControl.columns = [];
+		tableControl.oTable = void 0;
+		tableControl.getDiv = function() {
+		  return _div;
+		};
+		tableControl.getTable = function() {
+		  return domTable;
+		};
+		tableControl.getHeader = function() {
+		  return domHeader;
+		};
+		tableControl.createdRowAction = function(_f) {
+		  if (!arguments.length) return postCreatedRow;
+		  postCreatedRow = _f;
+		  return this;
+		};
+		return tableControl;
+	  },
+	  prototype: {
+		getDivs: function() {
+		  return this.getDiv();
+		},
+		addHeaders: function(_headers) {
+		  //var domtable = this.getTable();
+		  var self = this;
+		  var head = this.getHeader().append('<tr>').find('tr');
+		  _headers.forEach(function(d,i) {
+			self.columns.push({ data: d })
+			head.append('<th>'+d+'</th>');
+		  });
+		  return this;
+		},
+		create: function() {
+		  this.oTable = this.getTable().DataTable({
+			'lengthMenu': [[5, 10, 15, 20, -1], [5, 10, 15, 20, 'All']],
+			'iDisplayLength': 10,
+			'data': [],
+			//'order': [[0,"asc"]],
+			'order': [], // don't want any ordering 
+			'bAutoWidth':true,
+			'columns': this.columns,
+			'createdRow': this.createdRowAction()
+		  });
+		  return this;
+		},
+		draw: function() {
+		  this.oTable.draw();
+		  return this;
+		},
+		addRows: function(row) {
+		  this.oTable.row.add(row);
+		  return this;
+		},
+		clearRows: function() {
+		  this.oTable.clear().draw();
+		  return this;
+		}
+	  }
+	  
+	}
+
+	function buildTable2(){
+		console.log( "buildTable2 is called" );
+		
+		ch=['5%','6%','7%','8%','9%','10%','11%','12%']
+	
+	
+	}
+	
+	/////////////
+	/////////////
+	///////////// NPV taken from here 
+	/////////////
+	/////////////
+	
+	(function () {
+
+    'use strict';
+
+    var root = (1,eval)('this'),
+        previousFin = root.Fin,
+        Fin;
+
+    root.Fin = Fin = {};
+
+    Fin.VERSION = '0.0.1';
+    Fin.PRECISION = 4; // floating point precision
+
+    /*
+    Runs Fin.js in noConflict mode and
+    returns reference to this Fin object
+    */
+    Fin.noConflict = function () {
+        root.Fin = previousFin;
+        return this; 
+    };
+
+    /*
+    NPV - Net Present Value
+    rate = the periodic discount rate
+    example: If the discount rate is 10% enter 0.1, not 10.
+    payments = an array or object (keys are the year numbers) of payments
+    example: [-100, 50, 60] means an initial cash outflow of 100 at time 0,
+    then cash inflows of 50 at the end of the period one, and 60 at
+    the end of the period two.
+    If you pass {0: -100, 2:50}, then the payment at the end of the
+    year one is assumed to be 0.
+    */
+    Fin.npv = function (rate, payments, precision) {
+        var i, npv = 0;
+        if (!precision || isNaN(precision)) {
+            precision = this.PRECISION;
+        }
+        for (i in payments) {
+            if (payments.hasOwnProperty(i)) {
+                // do the NaN check here if you want.
+                // if (isNaN(payments[i])) return;
+                npv += payments[i] / Math.pow((1 + rate), i);
+            }
+        }
+        return npv.toFixed(precision);
+    };
+	}());
+	
+	/////////////
+	/////////////
+	///////////// NPV TESTING 
+	/////////////
+	/////////////
+	
+	var testing =0
+	if (testing ===1) {
+	//testing here to see if get the saem for excel
+	t1=Fin.npv(0.1,[-100])
+	t2=Fin.npv(0.1,[-100,100])
+	t3=Fin.npv(0.1,[-100,100,100])
+	t4=Fin.npv(0.1,[-100,100,100,100])
+	t5=Fin.npv(0.1,[-100,100,100,100,100])
+	t6=Fin.npv(0.1,[-100,100,100,100,100,100])
+	console.log(t1);
+	console.log(parseFloat(t1).toFixed(2));
+	console.log(parseFloat(t2).toFixed(2));
+	console.log(parseFloat(t3).toFixed(2));
+	console.log(parseFloat(t4).toFixed(2));
+	console.log(parseFloat(t5).toFixed(2));
+	console.log(parseFloat(t6).toFixed(2));
+	if(parseFloat(t1).toFixed(2)==='-100.00'){console.log("t1-TRUE")}else{console.log("t1-FALSE")}
+	if(parseFloat(t2).toFixed(2)==='-9.09'){console.log("t2-TRUE")}else{console.log("t3-FALSE")}
+	if(parseFloat(t3).toFixed(2)==='73.55'){console.log("t3-TRUE")}else{console.log("t3-FALSE")}
+	if(parseFloat(t4).toFixed(2)==='148.69'){console.log("t4-TRUE")}else{console.log("t4-FALSE")}
+	if(parseFloat(t5).toFixed(2)==='216.99'){console.log("t5-TRUE")}else{console.log("t5-FALSE")}
+	if(parseFloat(t6).toFixed(2)==='279.08'){console.log("t6-TRUE")}else{console.log("t6-FALSE")}
+	
+	console.log("--------------------- TEST 2 AGAIN -----------------------------")
+	
+	t1=Fin.npv(0.05,[-100])
+	t2=Fin.npv(0.05,[-100,100])
+	t3=Fin.npv(0.05,[-100,100,100])
+	t4=Fin.npv(0.05,[-100,100,100,100])
+	t5=Fin.npv(0.05,[-100,100,100,100,100])
+	t6=Fin.npv(0.05,[-100,100,100,100,100,100])
+	console.log(t1);
+	console.log(parseFloat(t1).toFixed(2));
+	console.log(parseFloat(t2).toFixed(2));
+	console.log(parseFloat(t3).toFixed(2));
+	console.log(parseFloat(t4).toFixed(2));
+	console.log(parseFloat(t5).toFixed(2));
+	console.log(parseFloat(t6).toFixed(2));
+	if(parseFloat(t1).toFixed(2)==='-100.00'){console.log("t1-TRUE")}else{console.log("t1-FALSE")}
+	if(parseFloat(t2).toFixed(2)==='-4.76'){console.log("t2-TRUE")}else{console.log("t3-FALSE")}
+	if(parseFloat(t3).toFixed(2)==='85.94'){console.log("t3-TRUE")}else{console.log("t3-FALSE")}
+	if(parseFloat(t4).toFixed(2)==='172.32'){console.log("t4-TRUE")}else{console.log("t4-FALSE")}
+	if(parseFloat(t5).toFixed(2)==='254.60'){console.log("t5-TRUE")}else{console.log("t5-FALSE")}
+	if(parseFloat(t6).toFixed(2)==='332.95'){console.log("t6-TRUE")}else{console.log("t6-FALSE")}
+	}else{console.log("testing not run");}
+	
+		
+		
+	// npv and irr is taken from here 
+	//here I will be using IRRCalc for my IRR 
+	//https://stackoverflow.com/questions/15089151/javascript-irr-internal-rate-of-return-formula-accuracy
+
+	function NPV(discountRate, cashFlow){
+		var npv = 0;
+		for(var t = 0; t < cashFlow.length; t++) {
+			npv += cashFlow[t] / Math.pow((1+ discountRate),t);
+		}
+		return npv;
+	}
+
+
+	function IRR(cashFlow,guess){
+		guess = guess ? guess : 0.1;
+		var npv;
+		var cnt = 0;
+		do
+		{
+			npv = NPV(guess,cashFlow);
+			guess+= 0.001;
+
+			cnt++;
+		}
+		while(npv > 0)
+
+		return guess;
+	}
+
+	function IRRCalc(CArray) {
+
+	  min = 0.0;
+	  max = 1.0;
+	  c=0;
+	  do {
+		guest = (min + max) / 2;
+		NPV = 0;
+		for (var j=0; j<CArray.length; j++) {
+			  NPV += CArray[j]/Math.pow((1+guest),j);
+			  //console.log(j,"-",NPV)
+		}
+		if (NPV > 0) {
+		  min = guest;
+		  c++; 
+		}
+		else {
+		  max = guest;
+		  c++;
+		}
+		
+		//console.log("c++",c++)
+		if(c>=15){ //console.log("c++",c++,", - guest",guest*100); 
+					return parseFloat(guest*100).toFixed(2); }
+	  } while(Math.abs(NPV) > 0.000001);
+	  //console.log(c,"-",guest)
+	  return parseFloat(guest*100).toFixed(2); //parseFloat(g).toFixed(2);
+	}
+	
+	
+	/////////////
+	/////////////
+	///////////// IRR testing
+	/////////////
+	/////////////
+	
+	testingIRR=0
+	if (testingIRR) {
+	
+		irr_arr=[-100, 100, 100, 100, 100,100]
+		irr_res_arr=[]
+		irr_res_arr_expected=[0,0,61.8,83.93,92.76,96.6]
+	
+		for(i=1;i<=irr_arr.length;i++){
+			//console.log("irr_arr - ",irr_arr.slice(0,i));
+			//console.log("IRRCalc - ",IRRCalc(irr_arr.slice(0,i)))
+			//console.log("irr_expected - ", irr_res_arr_expected[i-1])
+			if(IRRCalc(irr_arr.slice(0,i))===parseFloat(irr_res_arr_expected[i-1]).toFixed(2)){console.log(i,"- TRUE")} else {console.log(i,"- FALSE")}
+		}
+	}else{ console.log("testing IRR not run")}
+	//console.log(irr_arr.slice(0,2));
+	//console.log(IRRCalc([-100,100]))
+	
+	/*
+	arr=[-100, 100, 100, 100, 100,100]
+	t1=Fin.npv(0.05,[-100])
+	console.log(t1);
+	console.log(parseFloat(t1).toFixed(2));
+	if(parseFloat(t1).toFixed(2)==='-100.00'){console.log("t1-TRUE")}else{console.log("t1-FALSE")}
+	*/
+	
+	irr_question=0
+	
+	if (irr_question){
+	
+	//IRRCALC Question 
+	
+	function IRRCalc_test(CArray) {
+
+	  min = 0.0;
+	  max = 1.0;
+	  c=0;
+	  do {
+		guest = (min + max) / 2;
+		NPV = 0;
+		for (var j=0; j<CArray.length; j++) {
+			  NPV += CArray[j]/Math.pow((1+guest),j);
+		}
+		if (NPV > 0) {
+		  min = guest;
+		  c++; 
+		}
+		else {
+		  max = guest;
+		  c++;
+		}
+
+		if(c>=15){ return guest*100; }
+	  } while(Math.abs(NPV) > 0.000001);
+	  return guest*100;
+	}
+	
+	irr_arr=[-100, 100, 100, 100, 100,100]
+	irr_res_arr_expected=[0,0,61.8,83.93,92.76,96.6]
+	for(i=1;i<=irr_arr.length;i++){
+	console.log("irr_arr - ",irr_arr.slice(0,i));
+	console.log("IRRCalc - ",IRRCalc(irr_arr.slice(0,i)))
+	//console.log("irr_expected - ", irr_res_arr_expected[i-1])
+	//if(IRRCalc(irr_arr.slice(0,i))===parseFloat(irr_res_arr_expected[i-1]).toFixed(2)){console.log(i,"- TRUE")} else {console.log(i,"- FALSE")}
+	}
+	}else {
+		console.log("irr_question is not running ");
+	}
+	
+	</script>
+	
+	
+  </body>
+</html>

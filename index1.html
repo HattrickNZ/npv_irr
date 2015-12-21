@@ -1,0 +1,40 @@
+<html>
+<head>
+
+
+</head>
+
+<body>
+
+<?php
+
+echo "<hr>";
+echo '<p>Get Your Time Zone see here <a href="http://www.php.net/timezones">here is a list of different timezones</a>. </p>';
+echo '<a href="http://www.php.net/timezones">here is a list of different timezones</a>.';
+echo "<p>America/New_York</p>";
+
+date_default_timezone_set("America/New_York");
+echo "The time is " . date("h:i:sa");
+?>
+
+<?php
+
+echo "<hr>";
+echo "<p>Europe/Dublin</p>";
+
+date_default_timezone_set("Europe/Dublin");
+echo "The time is " . date("h:i:sa");
+?>
+
+<?php
+
+echo "<hr>";
+echo "<p>Pacific/Auckland</p>";
+
+date_default_timezone_set("Pacific/Auckland");
+echo "The time is " . date("h:i:sa");
+?>
+
+
+</body>
+</html>
